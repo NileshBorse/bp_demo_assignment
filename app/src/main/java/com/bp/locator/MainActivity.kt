@@ -33,6 +33,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -68,11 +69,11 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun FuelStationApp() {
-    var selectedRadius by remember { mutableIntStateOf(5) }
-    var open24h by remember { mutableStateOf(false) }
-    var hasStore by remember { mutableStateOf(false) }
-    var hotFood by remember { mutableStateOf(false) }
-    var bpCards by remember { mutableStateOf(false) }
+    var selectedRadius by rememberSaveable { mutableIntStateOf(5) }
+    var open24h by rememberSaveable { mutableStateOf(false) }
+    var hasStore by rememberSaveable { mutableStateOf(false) }
+    var hotFood by rememberSaveable { mutableStateOf(false) }
+    var bpCards by rememberSaveable { mutableStateOf(false) }
 
     val filteredStations = mockStations.filter {
         it.distance <= selectedRadius &&
