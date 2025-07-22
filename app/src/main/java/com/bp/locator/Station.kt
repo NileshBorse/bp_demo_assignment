@@ -1,5 +1,10 @@
 package com.bp.locator
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+
+@Parcelize
 data class Station(
     val name: String,
     val address: String,
@@ -8,4 +13,4 @@ data class Station(
     val hasConvenienceStore: Boolean,
     val servesHotFood: Boolean,
     val acceptsBpFuelCards: Boolean
-) 
+): Parcelable

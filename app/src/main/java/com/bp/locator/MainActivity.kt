@@ -197,26 +197,26 @@ fun StationCard(station: Station) {
             )
             Column(modifier = Modifier.weight(1f)) {
                 Text(
-                    station.name,
+                    text = station.name,
                     style = MaterialTheme.typography.titleMedium.copy(
                         color = Color(0xFF222222),
                         fontWeight = FontWeight.Bold
                     )
                 )
                 Text(
-                    station.address,
+                    text = station.address,
                     style = MaterialTheme.typography.bodyMedium.copy(color = Color(0xFF444444))
                 )
                 Text(
-                    String.format("%.2f miles", station.distance),
+                    text = String.format("%.2f miles", station.distance),
                     style = MaterialTheme.typography.bodySmall.copy(color = Color(0xFF666666))
                 )
-                Row {
-                    if (station.open24Hours) Text("24h  ", style = MaterialTheme.typography.bodySmall.copy(color = Color(0xFF007A33), fontWeight = FontWeight.Medium))
+                /*Row {
+                    if (station.open24Hours) Text("Open for 24h  ", style = MaterialTheme.typography.bodySmall.copy(color = Color(0xFF007A33), fontWeight = FontWeight.Medium))
                     if (station.hasConvenienceStore) Text("Store  ", style = MaterialTheme.typography.bodySmall.copy(color = Color(0xFF007A33), fontWeight = FontWeight.Medium))
-                    if (station.servesHotFood) Text("Hot Food  ", style = MaterialTheme.typography.bodySmall.copy(color = Color(0xFF007A33), fontWeight = FontWeight.Medium))
-                    if (station.acceptsBpFuelCards) Text("BP Card", style = MaterialTheme.typography.bodySmall.copy(color = Color(0xFF007A33), fontWeight = FontWeight.Medium))
-                }
+                    if (station.servesHotFood) Text("Hot Food Available ", style = MaterialTheme.typography.bodySmall.copy(color = Color(0xFF007A33), fontWeight = FontWeight.Medium))
+                    if (station.acceptsBpFuelCards) Text("BP Card Accepted", style = MaterialTheme.typography.bodySmall.copy(color = Color(0xFF007A33), fontWeight = FontWeight.Medium))
+                }*/
             }
         }
     }
